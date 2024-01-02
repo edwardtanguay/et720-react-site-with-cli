@@ -8,7 +8,11 @@ try {
 	console.log(pageManager.getIdCode());
 }
 catch (e) {
-	console.log(e.message);
+	console.log(`
+COMMAND: cp (create page)
+Syntax: npm run cp <pageIdCode>
+Example: npm run cp Reports	
+	`);
 }
 
 
