@@ -3,8 +3,13 @@ import * as tools from './tools';
 
 const pageIdCode = tools.getArgument(0);
 
-const pageManager = new PageManager(pageIdCode)
-console.log(pageManager.getIdCode());
+try {
+	const pageManager = new PageManager(pageIdCode)
+	console.log(pageManager.getIdCode());
+}
+catch (e) {
+	console.log(e.message);
+}
 
 
 // // const option = tools.getArgument(1);
