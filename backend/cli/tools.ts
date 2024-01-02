@@ -15,3 +15,7 @@ export const capitalizeFirstLetter = (text: string) => {
 export const readContentOfFile = (pathAndFileName: string) => {
 	return fs.readFileSync(pathAndFileName, { encoding: 'utf8', flag: 'r' });
 }
+
+export const convertStringBlockToLines = (stringBlock: string) => {
+	return stringBlock.split('\n');
+}
