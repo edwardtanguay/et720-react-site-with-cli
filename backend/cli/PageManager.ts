@@ -40,6 +40,13 @@ export const Page${this.pageIdCode} = () => {
 		
 		dynamicFile.addStringBlockBeforeMarker('MARKER::END_IMPORT_BLOCK', `import { Page${this.idCode} } from './pages/Page${this.idCode}.tsx';`);
 
+		dynamicFile.addStringBlockBeforeMarker('MARKER::END_PAGE_ROUTES', `
+			{
+				path: "${this.idCode.toLowerCase()}",
+				element: <Page${this.idCode} />,
+			},
+		`);
+
 		dynamicFile.save();
 	}
 
