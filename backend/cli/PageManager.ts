@@ -18,15 +18,15 @@ export class PageManager {
 
 	}
 
-// 	public createPage() {
-// 		tools.createFile(pathAndFileName, `
-// export const Page${pageIdCode} = () => {
-// 	return (
-// 		<p>This is the ${pageIdCode} page.</p>
-// 	)
-// }
-// `);
-// 	}
+	public createPage() {
+		tools.createFile(this.pagePathAndFileName, `
+export const Page${this.pageIdCode} = () => {
+	return (
+		<p>This is the ${this.pageIdCode} page.</p>
+	)
+}
+`);
+	}
 
 	debug() {
 		// console.log(`idCode = ${this.idCode}`);
