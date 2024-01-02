@@ -22,6 +22,7 @@ export class PageManager {
 	public createPage() {
 		this.createPageFile();
 		this.addBlockToNavFile();
+		this.addBlocksToMainFile();
 	}
 
 	private createPageFile() {
