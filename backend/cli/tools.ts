@@ -13,5 +13,5 @@ export const capitalizeFirstLetter = (text: string) => {
 }
 
 export const readContentOfFile = (pathAndFileName: string) => {
-	return 'test content for ' + pathAndFileName;
+	return fs.readFileSync(pathAndFileName, { encoding: 'utf8', flag: 'r' });
 }

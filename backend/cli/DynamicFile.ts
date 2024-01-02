@@ -11,8 +11,13 @@ export class DynamicFile {
 
 	public debug() {
 		console.table({
-			pathAndFileName: this.pathAndFileName,
-			content: this.content
-		})
+			pathAndFileName: this.pathAndFileName
+		});
+		console.log(`
+CONTENT OF FILE:
+----------------------------------------------------
+${this.content.trim()}
+----------------------------------------------------
+`.trim());
 	}
 }
