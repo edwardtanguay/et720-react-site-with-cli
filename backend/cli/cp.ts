@@ -5,8 +5,8 @@ const pageIdCode = tools.getArgument(0);
 
 try {
 	const pageManager = new PageManager(pageIdCode)
-	pageManager.debug();
-	// pageManager.createPage();
+	// pageManager.debug();
+	pageManager.createPage();
 }
 catch (e) {
 	console.log(`
