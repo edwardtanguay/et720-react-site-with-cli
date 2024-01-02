@@ -27,7 +27,7 @@ export class PageManager {
 
 	private createPageFile() {
 		tools.createFile(this.pagePathAndFileName, `
-export const Page${this.pageIdCode} = () => {
+export const ${this.pageIdCode} = () => {
 	return (
 		<p>This is the ${this.pageIdCode} page.</p>
 	)
