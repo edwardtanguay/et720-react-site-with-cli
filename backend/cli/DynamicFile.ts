@@ -1,13 +1,18 @@
+import * as tools from './tools';
+
 export class DynamicFile {
 	private pathAndFileName = '';
+	private content = '';
 
 	constructor(pathAndFileName: string) {
 		this.pathAndFileName = pathAndFileName;
+		this.content = tools.readContentOfFile(this.pathAndFileName);
 	}
 
-	debug() {
+	public debug() {
 		console.table({
-			pathAndFileName: this.pathAndFileName
+			pathAndFileName: this.pathAndFileName,
+			content: this.content
 		})
 	}
 }

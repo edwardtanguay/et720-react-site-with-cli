@@ -11,3 +11,7 @@ export const createFile = (pathAndFileName: string, content: string) => {
 export const capitalizeFirstLetter = (text: string) => {
 	return text[0].toUpperCase() + text.slice(1);
 }
+
+export const readContentOfFile = (pathAndFileName: string) => {
+	return 'test content for ' + pathAndFileName;
+}
