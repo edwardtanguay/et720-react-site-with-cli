@@ -1,3 +1,4 @@
+import { DynamicFile } from './DynamicFile';
 import * as tools from './tools';
 
 export class PageManager {
@@ -19,6 +20,11 @@ export class PageManager {
 	}
 
 	public createPage() {
+		this.createPageFile();
+		this.addBlockToNavFile();
+	}
+
+	private createPageFile() {
 		tools.createFile(this.pagePathAndFileName, `
 export const Page${this.pageIdCode} = () => {
 	return (
@@ -27,6 +33,14 @@ export const Page${this.pageIdCode} = () => {
 }
 `);
 	}
+
+	private addBlockToNavFile() {
+		const dynamicFile = new DynamicFile('src/components/Nav.tsx');
+		dynamicFile.addStringBlockBeforeMarker('</ul>', `\t\t\t<li><NavLink to="/${this.idCode}">${this.idCode}</NavLink></li>`);
+		dynamicFile.save();
+	}
+
+
 
 	debug() {
 		// console.log(`idCode = ${this.idCode}`);

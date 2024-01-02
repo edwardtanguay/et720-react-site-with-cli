@@ -19,3 +19,7 @@ export const readContentOfFile = (pathAndFileName: string) => {
 export const convertStringBlockToLines = (stringBlock: string) => {
 	return stringBlock.split('\n');
 }
+
+export const convertLinesToStringBlock = (lines: string[]) => {
+	return lines.join('\n');
+}
