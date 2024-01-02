@@ -34,6 +34,14 @@ export const Page${this.pageIdCode} = () => {
 `);
 	}
 
+	private addBlocksToMainFile() {
+		const dynamicFile = new DynamicFile('src/main.tsx');
+		
+		dynamicFile.addStringBlockBeforeMarker('MARKER::END_IMPORT_BLOCK', `import { Page${this.idCode} } from './pages/Page${this.idCode}.tsx';`);
+
+		dynamicFile.save();
+	}
+
 	private addBlockToNavFile() {
 		const dynamicFile = new DynamicFile('src/components/Nav.tsx');
 		dynamicFile.addStringBlockBeforeMarker('</ul>', `\t\t\t<li><NavLink to="/${this.idCode}">${this.idCode}</NavLink></li>`);
