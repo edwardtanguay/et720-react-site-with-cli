@@ -12,7 +12,7 @@ catch (e) {
 COMMAND: cp (create page)
 Syntax: npm run cp <pageIdCode>
 Example: npm run cp Reports	
-	`);
+`.trim());
 }
 
 
