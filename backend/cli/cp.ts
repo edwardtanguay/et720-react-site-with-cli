@@ -5,7 +5,8 @@ const pageIdCode = tools.getArgument(0);
 
 try {
 	const pageManager = new PageManager(pageIdCode)
-	console.log(pageManager.getIdCode());
+	pageManager.debug();
+	// pageManager.createPage();
 }
 catch (e) {
 	console.log(`
@@ -18,18 +19,8 @@ Example: npm run cp Reports
 
 // // const option = tools.getArgument(1);
 
-// const pageFileName = `Page${pageIdCode}.tsx`;
-// const pathAndFileName = `src/pages/${pageFileName}`;
-
 // console.log(`Creating ${pageFileName}...`);
 
-// tools.createFile(pathAndFileName, `
-// export const Page${pageIdCode} = () => {
-// 	return (
-// 		<p>This is the ${pageIdCode} page.</p>
-// 	)
-// }
-// `);
 
 /*
 process.argv 
