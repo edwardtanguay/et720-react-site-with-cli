@@ -3,6 +3,8 @@ import * as tools from './tools';
 export class PageManager {
 	private idCode = '';
 	private pageIdCode = '';
+	private pageFileName = '';
+	private pagePathAndFileName = '';
 
 	constructor(idCode: string) {
 		if (!idCode) {
@@ -11,9 +13,8 @@ export class PageManager {
 
 		this.idCode = tools.capitalizeFirstLetter(idCode);
 		this.pageIdCode = `Page${this.idCode}`;
-
-// const pageFileName = `Page${pageIdCode}.tsx`;
-// const pathAndFileName = `src/pages/${pageFileName}`;
+		this.pageFileName = `${this.pageIdCode}.tsx`;
+		this.pagePathAndFileName = `src/pages/${this.pageFileName}`;
 
 	}
 
@@ -32,7 +33,9 @@ export class PageManager {
 		// console.log(`pageIdCode = ${this.pageIdCode}`);
 		console.table({
 			idCode: this.idCode,
-			pageIdCode: this.pageIdCode
+			pageIdCode: this.pageIdCode,
+			pageFileName: this.pageFileName,
+			pagePathAndFileName: this.pagePathAndFileName
 		})
 	}
 
